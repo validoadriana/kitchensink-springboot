@@ -1,5 +1,5 @@
 # Stage 1: Build React frontend
-FROM registry.access.redhat.com/ubi8/nodejs-18-minimal as frontend-build
+FROM registry.access.redhat.com/ubi8/nodejs-18-minimal AS frontend-build
 USER 1001
 WORKDIR /app/frontend
 
@@ -9,11 +9,12 @@ RUN npm ci
 
 # Copy source code and build
 COPY --chown=1001:0 src/main/frontend/ ./
+ENV PUBLIC_URL=/kitchensink
 RUN npm run build
 
 
 # Stage 2: Build Spring Boot backend
-FROM registry.access.redhat.com/ubi8/openjdk-21 as backend-build
+FROM registry.access.redhat.com/ubi8/openjdk-21 AS backend-build
 USER 1001
 WORKDIR /app
 
@@ -36,10 +37,10 @@ WORKDIR /app
 COPY --chown=1001:0 --from=backend-build /app/target/*.jar ./app.jar
 
 # Define environment variables for MongoDB (optional for clarity)
-ENV MONGO_USERNAME=${MONGO_USERNAME} \
-    MONGO_PASSWORD=${MONGO_PASSWORD} \
-    MONGO_CLUSTER=${MONGO_CLUSTER} \
-    MONGO_DATABASE=${MONGO_DATABASE}
+#ENV MONGO_USERNAME=${MONGO_USERNAME} \
+#    MONGO_PASSWORD=${MONGO_PASSWORD} \
+#    MONGO_CLUSTER=${MONGO_CLUSTER} \
+#    MONGO_DATABASE=${MONGO_DATABASE}
 
 EXPOSE 8080
 

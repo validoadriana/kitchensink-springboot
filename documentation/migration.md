@@ -2,7 +2,7 @@
 
 | Legacy Component     | Modern Equivalent                      |
 | -------------------- | -------------------------------------- |
-| JSF + Managed Beans  | React (TypeScript) + REST API          |
+| JSF + Managed Beans  | React (TypeScript)                     |
 | EJB (Business Logic) | Spring Boot Service classes            |
 | JPA + Hibernate      | Spring Data MongoDB (NoSQL schema)     |
 | JAX-RS Resources     | Spring REST Controllers                |

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Member } from '../types/Member';
 
-const API_URL = '/rest/members';
+const API_URL = '/kitchensink/rest/members';
 
 export const memberService = {
     getAll: () => axios.get<Member[]>(API_URL),

@@ -47,6 +47,7 @@ export const MemberList: React.FC<MemberListProps> = ({refreshTrigger}) => {
                 <Table>
                     <TableHead>
                         <TableRow>
+                            <TableCell>Id</TableCell>
                             <TableCell>Name</TableCell>
                             <TableCell>Email</TableCell>
                             <TableCell>Phone Number</TableCell>
@@ -55,6 +56,7 @@ export const MemberList: React.FC<MemberListProps> = ({refreshTrigger}) => {
                     <TableBody>
                         {members.map(member => (
                             <TableRow key={member.id}>
+                                <TableCell>{member.id}</TableCell>
                                 <TableCell>{member.name}</TableCell>
                                 <TableCell>{member.email}</TableCell>
                                 <TableCell>{member.phoneNumber}</TableCell>

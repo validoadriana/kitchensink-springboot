@@ -15,7 +15,7 @@ This project is a migration of the JBoss Kitchensink quickstart to Spring Boot, 
 ```
 src/
 ├── main/
-│   ├── frontend/          # React TypeScript frontend
+│   ├── frontend/         # React TypeScript frontend
 │   ├── java/             # Spring Boot backend
 │   └── resources/        # Application configuration
 └── test/                 # Test files
@@ -25,8 +25,8 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd kitchensink-springboot-migration
+git clone https://github.com/validoadriana/kitchensink-springboot.git
+cd kitchensink-springboot
 ```
 
 2. Create a `.env` file in the root directory with your MongoDB credentials:
@@ -51,7 +51,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-The backend API will be available at `http://localhost:8080/rest`
+The backend API will be available at `http://localhost:8080/kitchensink/rest`
 
 ### Frontend Setup
 
@@ -70,7 +70,7 @@ npm install
 npm start
 ```
 
-The frontend will be available at `http://localhost:8080`
+The frontend will be available at `http://localhost:3000`
 
 ## Running with Docker
 
@@ -92,9 +92,9 @@ docker run -d -p 8080:8080 \
 
 ## API Endpoints
 
-- GET `/api/members` - List all members
-- POST `/api/members` - Create a new member
-- GET `/api/members/{id}` - Get member by ID
+- GET `/kitchensink/rest/members` - List all members
+- POST `/kitchensink/rest/members` - Create a new member
+- GET `/kitchensink/rest/members/{id}` - Get member by ID
 
 ## Running Tests
 
