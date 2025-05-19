@@ -1,5 +1,5 @@
 # Stage 1: Build React frontend
-FROM registry.access.redhat.com/ubi8/nodejs-18-minimal AS frontend-build
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal AS frontend-build
 USER 1001
 WORKDIR /app/frontend
 

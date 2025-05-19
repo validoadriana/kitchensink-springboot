@@ -1,11 +1,11 @@
 # Kitchensink Spring Boot Application
 
-This project is a migration of the JBoss Kitchensink quickstart to Spring Boot, featuring a React frontend and MongoDB backend.
+This project is a migration of the JBoss Kitchensink quickstart to Spring Boot, featuring a React frontend, Spring boot backend and MongoDB database.
 
 ## Prerequisites
 
 - JDK 21
-- Node.js 18+
+- Node.js 22+
 - Maven 3.9+
 - Docker (optional)
 - MongoDB Atlas Account (or local MongoDB instance)
